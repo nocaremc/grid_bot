@@ -29,6 +29,7 @@ Open src/pages/Index.vue
 We'll start at line 88 (or search 'export default')
 
 Fill in your api information from kucoin here:
+```
 kucoin: new ccxt.kucoin({
 	// Required if run locally
 	proxy: 'http://localhost:8181/',
@@ -36,19 +37,22 @@ kucoin: new ccxt.kucoin({
 	apiKey: '',
 	secret: '',
 	password: ''
+```
 
 Fill in these lines as appropiate. In my case I am trading kcs-usdt. If you want to trade, say, eth then change 'KCS' to 'ETH'.
+```
 symbol: 'KCS/USDT'
 base: 'USDT'
 coin: 'KCS'
+```
 
 Next we have these lines:
 Trading amount is how much of the coin we want to be buying with each order.
 baseThreshold should be the cost of a single order. So If kcs is $1 right now and I want to buy 25 my baseThreshold is 25.
-
+```
 tradingAmount: 25
 baseThreshold: 120
-
+```
 Next, we need to craft our grid of orders. I personally use LibreOffice but you should be able to open the file in OpenOffice or Google Docs.
 You probably format column A to match whatever decimal range your chose coin supports for best performance.
 
